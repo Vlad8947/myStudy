@@ -6,7 +6,9 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 public class DirWalker {
 
-    /** The Class walk on directory tree */
+    /**
+     * The Class walk on directory tree
+     */
     class MyFileVisitor extends SimpleFileVisitor<Path> {
 
         @Override
@@ -14,18 +16,15 @@ public class DirWalker {
             /** some code with dir funtion */
             return FileVisitResult.CONTINUE;
         }
+
     }
 
-    public void doIt (String dirName) {
-
+    public void doIt(String dirName) {
         try {
-
             Files.walkFileTree(Paths.get(dirName), new MyFileVisitor());
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }
