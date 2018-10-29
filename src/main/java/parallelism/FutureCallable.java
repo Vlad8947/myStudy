@@ -1,9 +1,6 @@
 package parallelism;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class FutureCallable {
 
@@ -33,7 +30,17 @@ public class FutureCallable {
         Future<Integer> future;
 
         future = executorService.submit(new Sum(10));
+        try {
+            System.out.println(future.get(10, TimeUnit.SECONDS));
 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
+        executorService.shutdown();
     }
 
 }
