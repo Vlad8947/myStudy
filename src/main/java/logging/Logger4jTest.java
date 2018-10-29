@@ -6,7 +6,8 @@ public class Logger4jTest {
 
     public static void log4j () {
 
-        // add dependencies log4j before all else
+        // Add dependencies log4j before all else
+        //  and create log4j.properties in resources
 
         Logger log = Logger.getLogger(Logger4jTest.class.getName());
 
