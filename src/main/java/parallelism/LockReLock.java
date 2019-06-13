@@ -9,8 +9,6 @@ public class LockReLock {
 
         ReentrantLock reLock = new ReentrantLock();
 
-
-
     }
 
     private class LockThread implements Runnable {
@@ -29,7 +27,9 @@ public class LockReLock {
 
             System.out.println(name + " before Lock");
 
-            if (reLock.tryLock()) reLock.unlock();
+            if (reLock.tryLock()) {
+                reLock.unlock();
+            }
 
             reLock.lock();
             System.out.println(name + " in Lock");
