@@ -22,6 +22,10 @@ public class SocketChanelNIO {
             for (SelectionKey selectionKey: selector.selectedKeys()) {
                 if (selectionKey.isAcceptable()) {
                     SocketChannel socketChannel = serverSocketChannel.accept();
+                    /**IMPORTANT!!!*/
+                    if(socketChannel == null) {
+                        continue;
+                    }
                     socketChannel.configureBlocking(false);
                     socketChannel.register(selector, SelectionKey.OP_READ);
                 }
