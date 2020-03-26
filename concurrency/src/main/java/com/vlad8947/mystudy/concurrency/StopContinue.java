@@ -5,6 +5,7 @@ public class StopContinue {
     static class RunnableClass implements Runnable {
         volatile boolean suspended = false;
 
+        @Override
         public void run() {
             System.out.println("Запуск потока");
             try {

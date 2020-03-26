@@ -47,6 +47,7 @@ public class ReentrantLockDemo {
             locker = lock;
         }
 
+        @Override
         public void run(){
 
             locker.lock(); // устанавливаем блокировку

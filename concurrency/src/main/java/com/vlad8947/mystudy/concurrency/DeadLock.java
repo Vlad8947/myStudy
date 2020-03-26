@@ -13,6 +13,7 @@ public class DeadLock {
     }
 
     private static class ThreadOne extends Thread {
+        @Override
         public void run() {
             synchronized (lock1) {
                 System.out.println("Thread1 захватил Lock1");
@@ -30,6 +31,7 @@ public class DeadLock {
     }
 
     private static class ThreadTwo extends Thread {
+        @Override
         public void run() {
             synchronized (lock2) {
                 System.out.println("Thread2 захватил Lock2");
