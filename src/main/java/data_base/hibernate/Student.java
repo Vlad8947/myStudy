@@ -17,8 +17,10 @@ public class Student implements Serializable {
     @GeneratedValue(generator = "uuid_generator")
     @Column(length = 36)
     private String id;
+
     @Column(nullable = false)
     private String name;
+
     private String mark;
 
     public Student() {
