@@ -24,6 +24,7 @@
 
     <modules>
         <module>concurrency</module>
+        <module>io</module>
     </modules>
 
     <dependencies>
