@@ -1,0 +1,1 @@
+Add static methods in Optional.
